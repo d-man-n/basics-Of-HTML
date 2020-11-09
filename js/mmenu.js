@@ -8,7 +8,7 @@ const menu = document.querySelector('.mob-menu');
 function showMenu() {
     menu.classList.add('mob-menu__showed');
     document.addEventListener('keydown', function(e) {
-        if (e.keyCode = keys.ESC) {
+        if (e.keyCode === keys.ESC) {
             closeMenu();
         }
     });

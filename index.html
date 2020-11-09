@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="SHORTCUT ICON" type="image/x-icon" href="img/favicon.png">
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/common.js" defer></script>
     <script src="js/mmenu.js" defer></script>
+    <script src="js/modal.js" defer></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/style.css">
@@ -15,6 +17,39 @@
     <title>Дипломный проект</title>
 </head>
 <body>
+    <div class="modal-bg_zvonok">
+	<div class="modal">
+	    <div class="modal__header">
+		<h2 class="modal__header_text">Заказать звонок</h2>
+		<button class="modal__close">
+		    <span class="modal__close_line"></span>
+		    <span class="modal__close_line"></span>
+		</button> 
+	    </div>
+	    <div class="modal__form">
+		<input type="text" class="modal__input" placeholder="Ваше имя">
+		<input type="tel" class="modal__input" placeholder="Номер Вашего телефона">
+		<button class="btn">Отправить</button>
+	    </div>
+	</div>
+    </div>
+    <div class="modal-bg_vopros">
+	<div class="modal">
+	    <div class="modal__header">
+		<h2 class="modal__header_text">Задать вопрос</h2>
+		<button class="modal__close">
+		    <span class="modal__close_line"></span>
+		    <span class="modal__close_line"></span>
+		</button> 
+	    </div>
+	    <div class="modal__form">
+		<input type="text" class="modal__input" placeholder="Ваше имя">
+		<input type="tel" class="modal__input" placeholder="Номер Вашего телефона">
+		<input type="email" class="modal__input" placeholder="Ваш email">
+		<button class="btn">Отправить</button>
+	    </div>
+	</div>
+    </div>
     <div class="mob-menu">
 	<div class="mob-menu__header">
 	    <div class="mob-menu__text">
@@ -59,7 +94,7 @@
                 </ul>
             </nav>
             <a href="tel:+74999955577" class="header__phone">+7 (499) 995-55-77</a>
-            <button class="zvonok-btn"></button>
+            <button class="zvonok-btn zvonok"></button>
         </div>
     </header>
     <main>
@@ -74,7 +109,7 @@
                 <div class="hero-header">
                     <h1>Дмитрий Алексеев</h1>
                     <p class="hero-header__text">Frontend-разработчик и веб-верстальщик</p>
-                    <button class="btn hero-header__btn">Узнать больше</button>
+                    <button class="btn hero-header__btn vopros">Узнать больше</button>
                 </div>
                     <img src="img/man2.png" alt="" class="hero__img_man">
             </div>
@@ -95,7 +130,7 @@
                     Исправление и доработка существующей вёрстки
                 </li>
             </ul>
-            <button class="about__btn btn">Узнать стоимость</button>
+            <button class="about__btn btn vopros">Узнать стоимость</button>
         </section>
         <section class="example">
             <div class="container example-container">
@@ -121,7 +156,7 @@
                     <div class="example__list_left"></div>
                     <div class="example__list_right"></div>
                 </div>
-                <button class="example__btn btn">Заказать проект</button>
+                <button class="example__btn btn vopros">Заказать проект</button>
             </div>
         </section>
         <section class="price">
@@ -140,7 +175,7 @@
         </section>
     </main>
     <footer>
-        <section class="container contacts">
+        <div class="container contacts">
             <ul class="footer-menu__list">
                 <li class="footer-menu__item">
                     <a href="#" class="footer-menu__link">Услуги</a>
@@ -157,7 +192,7 @@
                 <a href="mailto:dmitry@alekseev.com" class="footer-contacts__email"><i class="fa fa-envelope"></i> dmitry@alekseev.com</a>
             </div>
             <div class="footer-social">
-                <button class="footer-social__phone btn">Заказать звонок</button>
+                <button class="footer-social__phone btn zvonok">Заказать звонок</button>
                 <ul class="footer-social__list">
                     <li class="footer-social__item">
                         <a href="#" class="footer-social__link vk"></a>
@@ -173,10 +208,10 @@
                     </li>
                 </ul>
             </div>
-        </section>
-        <section class="copy">
-            © Дмитрий Алексеев, 2016 – 2018
-        </section>
+        </div>
+        <div class="copy">
+            <h3 class="copy__text">© Дмитрий Алексеев, 2016 – 2018</h3>
+        </div>
     </footer>
 </body>
 </html>

@@ -10,9 +10,9 @@
          url('fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
          url('fonts/roboto-v20-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
          url('fonts/roboto-v20-latin_cyrillic-regular.svg#Roboto') format('svg'); /* Legacy iOS */
-  }
-  /* roboto-700 - latin_cyrillic */
-  @font-face {
+}
+/* roboto-700 - latin_cyrillic */
+@font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -23,9 +23,9 @@
          url('fonts/roboto-v20-latin_cyrillic-700.woff') format('woff'), /* Modern Browsers */
          url('fonts/roboto-v20-latin_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
          url('fonts/roboto-v20-latin_cyrillic-700.svg#Roboto') format('svg'); /* Legacy iOS */
-  }
-  /* roboto-900 - latin_cyrillic */
-  @font-face {
+}
+/* roboto-900 - latin_cyrillic */
+@font-face {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 900;
@@ -36,7 +36,7 @@
          url('fonts/roboto-v20-latin_cyrillic-900.woff') format('woff'), /* Modern Browsers */
          url('fonts/roboto-v20-latin_cyrillic-900.ttf') format('truetype'), /* Safari, Android, iOS */
          url('fonts/roboto-v20-latin_cyrillic-900.svg#Roboto') format('svg'); /* Legacy iOS */
-  }
+}
 
 * {
     box-sizing: border-box;
@@ -85,11 +85,91 @@ img {
     padding-top: 20px;
     padding-bottom: 20px;
     cursor: pointer;
+    transition: transform .2s linear;
+}
+
+.btn:hover {
+    transform: scale(1.1, 1.1);
 }
 
 .container {
     width: 1170px;
     margin: 0 auto;
+}
+
+.modal-bg_zvonok,.modal-bg_vopros {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: -350vh;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.1);
+    transition: background-color .2s linear;
+    z-index:100;
+}
+
+.modal-bg__showed {
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+}
+
+.modal {
+    width: 600px;
+    background-color: #fff;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: -2px 2px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.modal__form {
+    padding: 20px;
+}
+
+.modal__input {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.modal__header_text {
+    font-size: 22px;
+    line-height: 30px;
+}
+
+.modal__close {
+    position: relative;
+    width: 30px;
+    height: 20px;
+    border: none;
+    background: none;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.modal__close_line {
+    position: absolute;
+    height: 2px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: inline-block;
+    background-color: #bebebe;
+}
+
+.modal__close_line:nth-child(1){
+    transform: rotate(45deg);
+}
+
+.modal__close_line:nth-child(2){
+   transform: rotate(-45deg);
 }
 
 .mob-menu {
@@ -143,7 +223,6 @@ img {
     color: #000000;
     text-decoration: none;
     font-size: 18px;
-
     padding-top: 12px;
     padding-bottom: 12px;
 }
@@ -183,7 +262,9 @@ img {
 }
 
 header {
+    position: relative;
     background-color: #fbfbfb;
+    z-index: 0;
 }
 
 .header-container {
@@ -203,6 +284,11 @@ header {
 
 .menu__link {
     color: #1f1f24;
+    transition: text-shadow .3s linear;
+}
+
+.menu__link:hover {
+    text-shadow: 2px 2px 8px #ff4e2e;
 }
 
 .menu__link:hover, .menu_active {
@@ -216,6 +302,11 @@ header {
     font-weight: 700;
     color: #1f1f24;
     margin-top: 6px;
+    transition: text-shadow .3s linear;
+}
+
+.header__phone:hover {
+    text-shadow: 2px 2px 8px #000000;
 }
 
 .zvonok-btn {
@@ -227,10 +318,16 @@ header {
     padding-left: 40px;
     padding-right: 40px;
     margin-left: 28px;
+    cursor: pointer;
+    transition: transform .2s linear;
 }
 
 .zvonok-btn::before {
     content: 'Заказать звонок';
+}
+
+.zvonok-btn:hover {
+    transform: scale(1.1, 1.1);
 }
 
 .header-burger {
@@ -489,6 +586,11 @@ header {
     height: 60px;
     cursor: pointer;
     z-index: 1;
+    transition: transform .2s linear;
+}
+
+.example__list_left:hover, .example__list_right:hover {
+    transform: scale(1.1, 1.1);
 }
 
 .example__list_left {
@@ -599,6 +701,12 @@ header {
 .footer-menu__link {
     color: #8993ad;
     letter-spacing: 1.0px;
+    transition: text-shadow .3s linear;
+}
+
+.footer-menu__link:hover {
+    color: #ff4e2e;
+    text-shadow: 2px 2px 8px #ff4e2e;
 }
 
 .footer-contacts {
@@ -612,6 +720,11 @@ header {
     color: #000;
     font-size: 25px;
     font-weight: 400;
+    transition: text-shadow .3s linear; 
+}
+
+.footer-contacts__phone:hover, .footer-contacts__email:hover {
+    text-shadow: 12px 2px 20px #000000;
 }
 
 .footer-contacts__phone {
@@ -671,6 +784,11 @@ header {
     display: block;
     height: 28px;
     background: url(../img/social-icons.png);
+    transition: filter .2s linear;
+}
+
+.footer-social__link:hover {
+    filter: drop-shadow(3px 5px 10px #676767);
 }
 
 .vk {
@@ -697,12 +815,15 @@ header {
 }
 
 .copy {
-    color: #fff;
-    font-size: 16px;
     background-color: #31293c;
     text-align: center;
     padding-top: 30px;
     padding-bottom: 33px;
+}
+
+.copy__text {
+    color: #fff;
+    font-size: 16px;
 }
 
 @media (max-width: 1400px) {
@@ -983,6 +1104,14 @@ header {
         padding-top: 18px;
         padding-bottom: 18px;
         font-size: 16px;
+    }
+
+    .modal {
+        width: 90%;
+    }
+    
+    .modal__header_text {
+	padding: 0;
     }
 
     .header-container {
@@ -1347,6 +1476,9 @@ header {
     .copy {
         padding-top: 20px;
         padding-bottom: 20px;
+    }
+    
+    .copy__text {
         font-size: 12px;
     }
 }
