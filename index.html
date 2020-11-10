@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="SHORTCUT ICON" type="image/x-icon" href="img/favicon.png">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/common.js" defer></script>
     <script src="js/mmenu.js" defer></script>
     <script src="js/modal.js" defer></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/style.css">
@@ -27,9 +29,11 @@
 		</button> 
 	    </div>
 	    <div class="modal__form">
-		<input type="text" class="modal__input" placeholder="Ваше имя">
-		<input type="tel" class="modal__input" placeholder="Номер Вашего телефона">
-		<button class="btn">Отправить</button>
+		<form method="post" action="https://echo.htmlacademy.ru/" id="qqq">
+		    <input type="text" name="name" class="modal__input" placeholder="Ваше имя">
+		    <input type="tel" name="tel" class="modal__input" id="phone-zvonok" placeholder="Номер Вашего телефона">
+		    <input type="submit" class="btn" value="Отправить">
+		</form>
 	    </div>
 	</div>
     </div>
@@ -43,10 +47,12 @@
 		</button> 
 	    </div>
 	    <div class="modal__form">
-		<input type="text" class="modal__input" placeholder="Ваше имя">
-		<input type="tel" class="modal__input" placeholder="Номер Вашего телефона">
-		<input type="email" class="modal__input" placeholder="Ваш email">
-		<button class="btn">Отправить</button>
+		<form method="post" action="https://echo.htmlacademy.ru/">
+		    <input type="text" name="name" class="modal__input" placeholder="Ваше имя">
+		    <input type="tel" name="tel" class="modal__input" id="phone-vopros" placeholder="Номер Вашего телефона">
+		    <input type="email" name="email" class="modal__input" placeholder="Ваш email">
+		    <button class="btn">Отправить</button>
+		</form>
 	    </div>
 	</div>
     </div>
@@ -63,13 +69,13 @@
 	</div>
 	<ul class="mob-menu__list">
 	    <li class="mob-menu__item">
-		<a href="#" class="mob-menu__link">Услуги</a>
+		<a href="#about" class="mob-menu__link">Услуги</a>
 	    </li>
 	    <li class="mob-menu__item">
-		<a href="#" class="mob-menu__link">Портфолио</a>
+		<a href="#example" class="mob-menu__link">Портфолио</a>
 	    </li>
 	    <li class="mob-menu__item">
-		<a href="#" class="mob-menu__link">Стоимость</a>
+		<a href="#price" class=about""mob-menu__link">Стоимость</a>
 	    </li>
 	</ul>
     </div>
@@ -83,13 +89,13 @@
             <nav class="header-menu">
                 <ul class="menu__list">
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Услуги</a>
+                        <a href="#about" class="menu__link">Услуги</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link menu_active">Портфолио</a>
+                        <a href="#example" class="menu__link menu_active">Портфолио</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#" class="menu__link">Стоимость</a>
+                        <a href="#price" class="menu__link">Стоимость</a>
                     </li>
                 </ul>
             </nav>
@@ -114,7 +120,7 @@
                     <img src="img/man2.png" alt="" class="hero__img_man">
             </div>
         </section>
-        <section class="container about">
+        <section class="container about" id="about">
             <h2 class="about__header">Что я делаю</h2>
             <ul class="about__list">
                 <li class="about__item about1">
@@ -132,7 +138,7 @@
             </ul>
             <button class="about__btn btn vopros">Узнать стоимость</button>
         </section>
-        <section class="example">
+        <section class="example" id="example">
             <div class="container example-container">
                 <h2 class="example__header">Примеры моих работ</h2>
                 <div class="example-block">
@@ -159,7 +165,7 @@
                 <button class="example__btn btn vopros">Заказать проект</button>
             </div>
         </section>
-        <section class="price">
+        <section class="price" id="price">
             <div class="price__el p-el1">{ }</div>
             <div class="price__el p-el2">&lt;/&gt;</div>
             <div class="price__el p-el3">&lt;div&gt;</div>
@@ -178,13 +184,13 @@
         <div class="container contacts">
             <ul class="footer-menu__list">
                 <li class="footer-menu__item">
-                    <a href="#" class="footer-menu__link">Услуги</a>
+                    <a href="#about" class="footer-menu__link">Услуги</a>
                 </li>
                 <li class="footer-menu__item">
-                    <a href="#" class="footer-menu__link">Портфолио</a>
+                    <a href="#example" class="footer-menu__link">Портфолио</a>
                 </li>
                 <li class="footer-menu__item">
-                    <a href="#" class="footer-menu__link">Стоимость</a>
+                    <a href="#price" class="footer-menu__link">Стоимость</a>
                 </li>
             </ul>
             <div class="footer-contacts">
@@ -210,8 +216,22 @@
             </div>
         </div>
         <div class="copy">
-            <h3 class="copy__text">© Дмитрий Алексеев, 2016 – 2018</h3>
+            <small class="copy__text">© Дмитрий Алексеев, 2016 – 2018</small>
         </div>
     </footer>
+<script>
+    $(function(){
+	$("#phone-zvonok").mask("8(999) 999-9999");
+	$("#phone-vopros").mask("8(999) 999-9999");
+    });
+    
+    $("form").submit(function(){
+	var $form = $(this);
+	$.post(
+    	    $form.attr("action"),
+    	    $form.serialize()
+	);
+    });
+</script>
 </body>
 </html>
