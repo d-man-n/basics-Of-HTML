@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate" />
+    <meta name="description" content="Дипломный проект">
     <link rel="SHORTCUT ICON" type="image/x-icon" href="img/favicon.png">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
@@ -32,7 +34,7 @@
 		<form method="post" action="https://echo.htmlacademy.ru/" id="qqq">
 		    <input type="text" name="name" class="modal__input" placeholder="Ваше имя">
 		    <input type="tel" name="tel" class="modal__input" id="phone-zvonok" placeholder="Номер Вашего телефона">
-		    <input type="submit" class="btn" value="Отправить">
+		    <button class="btn">Отправить</button>
 		</form>
 	    </div>
 	</div>
@@ -53,6 +55,19 @@
 		    <input type="email" name="email" class="modal__input" placeholder="Ваш email">
 		    <button class="btn">Отправить</button>
 		</form>
+	    </div>
+	</div>
+    </div>
+    <div class="modal-bg_send">
+	<div class="modal">
+	    <div class="modal__header">
+		<button class="modal__close">
+		    <span class="modal__close_line"></span>
+		    <span class="modal__close_line"></span>
+		</button> 
+	    </div>
+	    <div class="modal__form">
+		<p class="modal__text_send">Данные успешно отправлены</p>
 	    </div>
 	</div>
     </div>
@@ -225,12 +240,20 @@
 	$("#phone-vopros").mask("8(999) 999-9999");
     });
     
-    $("form").submit(function(){
+    $("form").submit(function(event){
+	event.preventDefault();
+	
 	var $form = $(this);
 	$.post(
     	    $form.attr("action"),
     	    $form.serialize()
 	);
+
+    $("input, textarea").val("");
+    $(".modal-bg_vopros").removeClass('modal-bg__showed');
+    $(".modal-bg_zvonok").removeClass('modal-bg__showed');
+    $(".modal-bg_send").addClass('modal-bg__showed');
+    setTimeout(() => { $(".modal-bg_send").removeClass('modal-bg__showed') }, 3000);
     });
 </script>
 </body>
