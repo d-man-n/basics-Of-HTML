@@ -273,7 +273,7 @@ img {
 header {
     position: relative;
     background-color: #fbfbfb;
-    z-index: 0;
+    z-index: 5;
 }
 
 .header-container {
@@ -348,6 +348,17 @@ header {
     height: 32px;
     margin-top: 7px;
     margin-left: 40px;
+    cursor: pointer;
+}
+
+.header-burger_fixed {
+    position: fixed;
+    display: block;
+    background-color: #ffffff;
+    border: 20px solid #ffffff;
+    box-sizing: content-box;
+    top: 20px;
+    left: 0px;
 }
 
 .header-burger:hover .header-burger__line {
@@ -833,6 +844,15 @@ header {
 .copy__text {
     color: #fff;
     font-size: 16px;
+}
+
+@media (max-width: 1700px) {
+    .el4 {
+	top: 310px;
+    }
+    .p-el4 {
+	top: 270px;
+    }
 }
 
 @media (max-width: 1400px) {

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate" />
     <meta name="description" content="Дипломный проект">
     <link rel="SHORTCUT ICON" type="image/x-icon" href="img/favicon.png">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -12,6 +11,7 @@
     <script src="js/common.js" defer></script>
     <script src="js/mmenu.js" defer></script>
     <script src="js/modal.js" defer></script>
+    <script src="js/scroll.js" defer></script>
     <script src="js/jquery.maskedinput.min.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/font-awesome.css">
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>Дипломный проект</title>
+
 </head>
 <body>
     <div class="modal-bg_zvonok">
@@ -31,9 +32,9 @@
 		</button> 
 	    </div>
 	    <div class="modal__form">
-		<form method="post" action="https://echo.htmlacademy.ru/" id="qqq">
-		    <input type="text" name="name" class="modal__input" placeholder="Ваше имя">
-		    <input type="tel" name="tel" class="modal__input" id="phone-zvonok" placeholder="Номер Вашего телефона">
+		<form method="post" action="mail.php">
+		    <input type="text" name="name" class="modal__input" placeholder="Ваше имя" required>
+		    <input type="tel" name="tel" class="modal__input" id="phone-zvonok" placeholder="Номер Вашего телефона" required>
 		    <button class="btn">Отправить</button>
 		</form>
 	    </div>
@@ -49,10 +50,10 @@
 		</button> 
 	    </div>
 	    <div class="modal__form">
-		<form method="post" action="https://echo.htmlacademy.ru/">
-		    <input type="text" name="name" class="modal__input" placeholder="Ваше имя">
-		    <input type="tel" name="tel" class="modal__input" id="phone-vopros" placeholder="Номер Вашего телефона">
-		    <input type="email" name="email" class="modal__input" placeholder="Ваш email">
+		<form method="post" action="mail.php">
+		    <input type="text" name="name" class="modal__input" placeholder="Ваше имя" required>
+		    <input type="tel" name="tel" class="modal__input" id="phone-vopros" placeholder="Номер Вашего телефона" required>
+		    <input type="email" name="email" class="modal__input" placeholder="Ваш email" required>
 		    <button class="btn">Отправить</button>
 		</form>
 	    </div>
@@ -90,7 +91,7 @@
 		<a href="#example" class="mob-menu__link">Портфолио</a>
 	    </li>
 	    <li class="mob-menu__item">
-		<a href="#price" class=about""mob-menu__link">Стоимость</a>
+		<a href="#price" class="mob-menu__link">Стоимость</a>
 	    </li>
 	</ul>
     </div>
@@ -216,16 +217,16 @@
                 <button class="footer-social__phone btn zvonok">Заказать звонок</button>
                 <ul class="footer-social__list">
                     <li class="footer-social__item">
-                        <a href="#" class="footer-social__link vk"></a>
+                        <a href="https://vk.com/share.php?url=dmann.ru" class="footer-social__link vk" target="_blank"></a>
                     </li>
                     <li class="footer-social__item">
-                        <a href="#" class="footer-social__link fb"></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=dmann.ru" class="footer-social__link fb" target="_blank"></a>
                     </li>
                     <li class="footer-social__item">
-                        <a href="#" class="footer-social__link tw"></a>
+                        <a href="https://twitter.com/intent/tweet?url=dmann.ru" class="footer-social__link tw" target="_blank"></a>
                     </li>
                     <li class="footer-social__item">
-                        <a href="#" class="footer-social__link inst"></a>
+                        <a href="https://www.instagram.com/rosmorrechflot_russia/" class="footer-social__link inst" target="_blank"></a>
                     </li>
                 </ul>
             </div>
